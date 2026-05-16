@@ -24,7 +24,6 @@ dashscope.api_key = "OS-r29as9jl15bhvux0"  # 这里改成你的API Key
 # 加载苏州企业ESG数据（从CSV加载，不再硬编码）
 @st.cache_data  # 缓存数据，提升加载速度
 def load_esg_data():
-    try:
         # 读取CSV文件
        import os
 
