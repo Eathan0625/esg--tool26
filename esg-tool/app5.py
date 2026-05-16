@@ -26,11 +26,12 @@ dashscope.api_key = "OS-r29as9jl15bhvux0"  # 这里改成你的API Key
 def load_esg_data():
         # 读取CSV文件
        import os
+       import pandas as pd
+       import streamlit as st
 
 BASE_DIR = os.path.dirname(__file__)
 file_path = os.path.join(BASE_DIR, "data", "suzhou_esg_data.csv")
-
-df = pd.read_csv(file_path)
+ df = pd.read_csv(file_path)
         # 计算综合ESG得分（权重：E=30%, S=30%, G=40%）
         df["综合ESG"] = (df["E得分"]*0.3 + df["S得分"]*0.3 + df["G得分"]*0.4).round(1)
         # 计算各行业平均ESG得分（用于对比）
